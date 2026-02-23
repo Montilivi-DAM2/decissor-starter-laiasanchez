@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     //Serialització
     kotlin("plugin.serialization") version "2.0.21"
+    alias(libs.plugins.kotlin.android)
 }
 
 android {
@@ -39,6 +40,9 @@ android {
     buildFeatures {
         compose = true
     }
+    kotlinOptions {
+        jvmTarget = "11"
+    }
 }
 
 dependencies {
@@ -57,6 +61,8 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.9.7")
     //Biblioteca extesa d'icones
     implementation("androidx.compose.material:material-icons-extended")
+    implementation(libs.core.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
     //implementation ("androidx.compose.material:material:1.7.5")
 
     testImplementation(libs.junit)
