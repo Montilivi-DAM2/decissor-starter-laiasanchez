@@ -23,6 +23,7 @@ class ViewModelOracleResposta(
             pregunta = arg.pregunta,
             resposta = ""
         )
+        respon()
     }
     val respostes = listOf<String>(
         "Sí, definitivament.",
